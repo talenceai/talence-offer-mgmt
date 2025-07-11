@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Offer Letter</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+    .title { font-size: 24px; font-weight: bold; margin-bottom: 20px; }
+    .section { margin-top: 20px; }
+    .signature { margin-top: 60px; }
+  </style>
+</head>
+<body>
+  <div class="title">Offer Letter</div>
+
+  <p>Dear {{ Candidate_Name }},</p>
+
+  <p>We are pleased to offer you the position of <strong>{{ Position }}</strong> at <strong>{{ Company_Name }}</strong>.</p>
+
+  <p>Here are the details of your offer:</p>
+  <ul>
+    <li><strong>CTC:</strong> {{ CTC }}</li>
+    <li><strong>Joining Date:</strong> {{ DOJ }}</li>
+    <li><strong>Location:</strong> {{ Location }}</li>
+    <li><strong>Reporting To:</strong> {{ Reporting_Manager }}</li>
+  </ul>
+
+  <p>Please review and accept the offer by signing the document.</p>
+
+  <div class="signature">
+    Regards,<br>
+    <strong>{{ Company_Name }}</strong>
+  </div>
+</body>
+</html>

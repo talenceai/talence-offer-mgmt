@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Offer Letter</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 40px; color: #333; }
+        h1 { text-align: center; color: #2c3e50; }
+        .section { margin-bottom: 25px; }
+        .signature { margin-top: 60px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        td, th { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <p>Date: {{ date }}</p>
+
+    <p>To,<br>
+    {{ candidate_name }}<br>
+    (Code: {{ candidate_code }})</p>
+
+    <div class="section">
+        <h2>Provisional Offer Letter</h2>
+        <p>We are pleased to offer you employment as <strong>{{ job_title }}</strong> at <strong>{{ company_name }}</strong>. Your services will be deputed to <strong>{{ client_name }}</strong> on the following terms:</p>
+    </div>
+
+    <div class="section">
+        <ul>
+            <li><strong>Joining Date:</strong> {{ joining_date }}</li>
+            <li><strong>Employment Type:</strong> {{ employment_type }}</li>
+            <li><strong>CTC:</strong> ₹{{ ctc }}</li>
+            <li><strong>Location:</strong> {{ location }}</li>
+            <li><strong>Reporting To:</strong> {{ reporting_manager }}</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <p>This employment offer is subject to successful completion of our onboarding process, including background verification and documentation:</p>
+        <ul>
+            <li>Submit KYC documents (Aadhar, PAN)</li>
+            <li>Address Proof, Educational & Employment Docs</li>
+            <li>Bank details for salary processing</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <p>Please note that this is a provisional offer and not the final appointment letter. Your appointment is subject to joining formalities and verification processes.</p>
+    </div>
+
+    <div class="signature">
+        <p>Regards,<br><strong>{{ hr_name }}</strong><br>{{ hr_designation }}<br>{{ company_name }}</p>
+    </div>
+
+    <hr>
+
+    <h3>Annexure I: Salary Breakup</h3>
+    <table>
+        <tr><th>Component</th><th>Monthly (₹)</th><th>Yearly (₹)</th></tr>
+        {% for component in salary_components %}
+        <tr><td>{{ component.name }}</td><td>{{ component.monthly }}</td><td>{{ component.yearly }}</td></tr>
+        {% endfor %}
+        <tr><th>Total CTC</th><th></th><th>{{ ctc }}</th></tr>
+    </table>
+</body>
+</html>
